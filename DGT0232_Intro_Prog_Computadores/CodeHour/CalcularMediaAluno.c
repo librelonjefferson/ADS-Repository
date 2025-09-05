@@ -1,0 +1,103 @@
+#include <stdio.h>
+
+/* 
+    Autor: Jefferson Librelon
+        Data: 04/09/2025
+            Descrição: Programa para calcular a média de um aluno
+                Versão: 1.0
+
+                    Pseudocódigo:
+                        // Declaração de variáveis
+                          Variável matricula: inteiro
+                            Variável nome_aluno: texto
+                              Variável disciplina: texto
+                                Variável nota1, nota2, nota3: real
+                                  Variável media_final: real
+                                    Variável matricula_encontrada: booleano = falso
+
+                                      Inicio
+                                          // Passo 1: Solicitar e validar a matrícula do aluno
+                                              Enquanto (matricula_encontrada é falso)
+                                                    Escrever("Olá, por favor, informe o número da matrícula do aluno.")
+                                                          Ler(matricula)
+                                                                
+                                                                      // Simulação da verificação no banco de dados
+                                                                            Se (matricula existe no banco de dados)
+                                                                                    matricula_encontrada = verdadeiro
+                                                                                            // Busca o nome do aluno no banco de dados
+                                                                                                    nome_aluno = "João da Silva" // Exemplo de nome encontrado
+                                                                                                            Escrever("Matrícula encontrada para o aluno: " + nome_aluno)
+                                                                                                                  Senão
+                                                                                                                          Escrever("Matrícula não encontrada. Por favor, tente novamente.")
+                                                                                                                                Fim Se
+                                                                                                                                    Fim Enquanto
+
+                                                                                                                                        // Passo 2: Solicitar a disciplina e as notas
+                                                                                                                                            Escrever("Para qual disciplina deseja informar as notas?")
+                                                                                                                                                // Em um programa real, você listaria as disciplinas aqui
+                                                                                                                                                    Ler(disciplina)
+                                                                                                                                                        
+                                                                                                                                                            Escrever("Por favor, informe a primeira nota (P1):")
+                                                                                                                                                                Ler(nota1)
+                                                                                                                                                                    
+                                                                                                                                                                        Escrever("Por favor, informe a segunda nota (P2):")
+                                                                                                                                                                            Ler(nota2)
+                                                                                                                                                                                
+                                                                                                                                                                                    Escrever("Por favor, informe a nota do seminário:")
+                                                                                                                                                                                        Ler(nota3)
+                                                                                                                                                                                            
+                                                                                                                                                                                                // Passo 3: Calcular a média
+                                                                                                                                                                                                    media_final = (nota1 + nota2 + nota3) / 3
+                                                                                                                                                                                                        
+                                                                                                                                                                                                            // Passo 4: Exibir o resultado final
+                                                                                                                                                                                                                Escrever("A média final do aluno " + nome_aluno + ", matrícula " + matricula + ", na disciplina de " + disciplina + " é: " + media_final)
+                                                                                                                                                                                                                    
+                                                                                                                                                                                                                      Fim
+                                                                                                                                                                                                                      */
+
+                                                                                                                                                                                                                      int main() {
+                                                                                                                                                                                                                          int matricula;
+                                                                                                                                                                                                                              char nome_aluno[100];
+                                                                                                                                                                                                                                  char disciplina[100];
+                                                                                                                                                                                                                                      float nota1, nota2, nota3;
+                                                                                                                                                                                                                                          float media_final;
+                                                                                                                                                                                                                                              int matricula_encontrada = 0; // falso
+
+                                                                                                                                                                                                                                                  // Passo 1: Solicitar e validar a matrícula do aluno
+                                                                                                                                                                                                                                                      while (matricula_encontrada == 0) {
+                                                                                                                                                                                                                                                              printf("Olá, por favor, informe o número da matrícula do aluno:\n");
+                                                                                                                                                                                                                                                                      scanf("%d", &matricula);
+
+                                                                                                                                                                                                                                                                              // Simulação da verificação no banco de dados
+                                                                                                                                                                                                                                                                                      if (matricula == 12345) { // Exemplo de matrícula existente
+                                                                                                                                                                                                                                                                                                  matricula_encontrada = 1; // verdadeiro
+                                                                                                                                                                                                                                                                                                              // Busca o nome do aluno no banco de dados
+                                                                                                                                                                                                                                                                                                                          snprintf(nome_aluno, sizeof(nome_aluno), "João da Silva"); // Exemplo de nome encontrado
+                                                                                                                                                                                                                                                                                                                                      printf("Matrícula encontrada para o aluno: %s\n", nome_aluno);
+                                                                                                                                                                                                                                                                                                                                              } else {
+                                                                                                                                                                                                                                                                                                                                                          printf("Matrícula não encontrada. Por favor, tente novamente.\n");
+                                                                                                                                                                                                                                                                                                                                                                  }
+                                                                                                                                                                                                                                                                                                                                                                      }
+
+                                                                                                                                                                                                                                                                                                                                                                          // Passo 2: Solicitar a disciplina e as notas
+                                                                                                                                                                                                                                                                                                                                                                              printf("Para qual disciplina deseja informar as notas?\n");
+                                                                                                                                                                                                                                                                                                                                                                                  // Em um programa real, você listaria as disciplinas aqui
+                                                                                                                                                                                                                                                                                                                                                                                      scanf("%s", disciplina);
+
+                                                                                                                                                                                                                                                                                                                                                                                          printf("Por favor, informe a primeira nota (P1):\n");
+                                                                                                                                                                                                                                                                                                                                                                                              scanf("%f", &nota1);
+
+                                                                                                                                                                                                                                                                                                                                                                                                  printf("Por favor, informe a segunda nota (P2):\n");
+                                                                                                                                                                                                                                                                                                                                                                                                      scanf("%f", &nota2);
+
+                                                                                                                                                                                                                                                                                                                                                                                                          printf("Por favor, informe a nota do seminário:\n");
+                                                                                                                                                                                                                                                                                                                                                                                                              scanf("%f", &nota3);
+
+                                                                                                                                                                                                                                                                                                                                                                                                                  // Passo 3: Calcular a média
+                                                                                                                                                                                                                                                                                                                                                                                                                      media_final = (nota1 + nota2 + nota3) / 3;
+
+                                                                                                                                                                                                                                                                                                                                                                                                                          // Passo 4: Exibir o resultado final
+                                                                                                                                                                                                                                                                                                                                                                                                                              printf("A média final do aluno %s, matrícula %d, na disciplina de %s é: %.2f\n", nome_aluno, matricula, disciplina, media_final);
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                  return 0;
+                                                                                                                                                                                                                                                                                                                                                                                                                                  }
